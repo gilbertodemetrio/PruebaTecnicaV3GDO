@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "645786c0-ba32-41fd-8bfd-c5616a8a3723",
+		"name": "TestFonyou",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14810320"
+	},
+	"item": [
+		{
+			"name": "CreateExam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"examName\":\"nombre\",\r\n    \"examKey\":\"exam2\",\r\n\t\"version\":\"1\",\r\n\t\"questions\":[\r\n\t\t\t{\r\n\t\t\t\t\"questionKey\":\"1\",\r\n\t\t\t\t\"questionText\":\"pregunta 1\",\r\n                \"optionKeyCorrectAnswer\":\"d\",\r\n\t\t\t\t\"options\":[\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"optionKey\":\"a\",\r\n\t\t\t\t\t\t\"optionText\":\"descripcionRespuesta-1\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"optionKey\":\"b\",\r\n\t\t\t\t\t\t\"optionText\":\"descripcionRespuesta-2\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"questionKey\":\"2\",\r\n\t\t\t\t\"questionText\":\"pregunta 2\",\r\n                \"optionKeyCorrectAnswer\":\"b\",\r\n\t\t\t\t\"options\":[\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"optionKey\":\"a\",\r\n\t\t\t\t\t\t\"optionText\":\"descripcionRespuesta-1\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"optionKey\":\"b\",\r\n\t\t\t\t\t\t\"optionText\":\"descripcionRespuesta-2\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t}\r\n\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/exam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"exam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/exam/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"exam",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Gil Demetrio\",\r\n    \"studentKey\":\"student2\",\r\n    \"address\":\"Jalpa de los Baños, Ixtahuaca, Estado de Mexico\",\r\n    \"city\":\"Ixtlahuaca\",\r\n    \"timeZone\":\"America/Mexico_City\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssignTestToStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dueDateTest\":\"01/09/2023\",\r\n    \"status\": \"ACTIVE\",\r\n    \"timeZone\":\"timeZone\",\r\n    \"examKey\":\"exam2\",\r\n    \"studentKey\":\"student2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/assign-test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"assign-test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
